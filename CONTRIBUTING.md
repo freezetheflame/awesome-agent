@@ -1,53 +1,40 @@
 # Contributing
 
-Thanks for helping build a useful Agent knowledge map.
+This repository is a framework landscape, not a popularity leaderboard.
 
-## Adding a resource
+## Adding a project
 
-Please add an entry to the most specific section, or open an issue if a new
-section is needed. Each entry should answer:
+Add a project to the most specific section of `frameworks/README.md`. Each entry
+should include:
 
-1. What design or learning question does it help with?
-2. Who maintains it, and what is its current maturity?
-3. What is the primary evidence or source?
-4. What limitation, trade-off, or failure mode should a reader know?
-5. When did you last check the link?
+- official source repository and documentation when available;
+- architectural role: SDK/runtime, orchestration, protocol/infra, application,
+  or evaluation;
+- the primary design center in one sentence;
+- a maturity, maintenance, or migration caveat;
+- a GitHub attention signal only when useful, with an explicit snapshot date.
 
-Use this template when the entry needs more context:
+Use this shape:
 
 ```markdown
-- [Name](https://example.com) — **type; maturity.** Design lesson. Limitation.
-  Last checked: YYYY-MM-DD.
+| [Project](https://github.com/org/repo) | Python | typed tool loop | verify maintenance/release status | snapshot |
 ```
-
-## Adding a design pattern card
-
-Create a focused file under `patterns/` and add it to `patterns/README.md` and
-the pattern index in `README.md`. A card should include:
-
-- the design question and a small architecture diagram;
-- good-fit and avoid-when guidance;
-- state, tool, permission, and termination contracts;
-- failure modes, observability signals, and evaluation suggestions;
-- primary references and a last-checked date.
-
-Patterns should describe a system shape and its trade-offs, not advertise a
-framework or imply that more autonomy is automatically better.
 
 ## Review standards
 
-- Prefer primary papers, official documentation, source repositories, and
-  reproducible benchmarks.
-- Keep framework and product descriptions factual and specific.
-- Do not use star counts, launch announcements, or vendor claims as proof of
-  reliability or capability.
-- Avoid duplicate lists unless the new resource has a genuinely different
-  audience or organizing principle.
-- Keep the catalogue useful to both English- and Chinese-speaking readers.
-- Remove or mark links that are dead, abandoned, or materially outdated.
+- Prefer official repositories, official documentation, papers, benchmarks, and
+  reproducible examples.
+- Do not describe an application as an SDK, or a protocol as an orchestration
+  framework.
+- Do not infer reliability, security, or production readiness from stars.
+- Call out archived, experimental, migrating, or vendor-specific projects.
+- Avoid duplicate links from other Awesome lists unless this catalogue adds a
+  useful architectural classification or comparison.
+- Keep descriptions factual, compact, and useful to both English- and
+  Chinese-speaking readers.
 
 ## Pull requests
 
-Keep pull requests focused. Explain the design question behind each addition
-and mention any link or status checks you performed. Maintainers may reorganize
-entries to keep categories coherent.
+Keep updates focused. Explain why a project belongs in its category and what a
+reader learns from studying it. Include the date of any status or star-count
+check. Maintainers may move entries when a project's role changes.

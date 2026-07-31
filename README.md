@@ -1,124 +1,52 @@
 # Awesome Agent
 
-> A practical, evidence-oriented map for learning, designing, building, and evaluating AI agents.
+> A curated landscape of Agent SDKs, frameworks, protocols, runtimes, and large open-source Agent applications.
 
-There are already excellent lists of agent projects, papers, skills, and
-harnesses. This project takes a complementary approach: every entry should
-help answer a design question, not merely add another link.
+There are already many excellent `awesome-agent` lists. This repository now
+focuses on a narrower and more useful question: **what kind of system is each
+project, what design idea does it embody, and when should we study or use it?**
 
-**中文说明：** 这是一个面向 Agent 学习与设计实践的知识地图。我们不仅收集
-框架和论文，也整理设计模式、工程权衡、评测方法、安全边界、学习网站和近期
-高质量文章。欢迎提交资源，但请说明它解决什么问题、适合什么阶段，以及证据
-在哪里。
+## Framework landscape
 
-## What belongs here?
+Start with the [Agent Framework Landscape](frameworks/README.md). It separates:
 
-We organize resources around the decisions an agent builder actually makes:
+- official SDKs and agent runtimes;
+- graph/workflow orchestration frameworks;
+- multi-agent and role-based systems;
+- protocols, tools, guardrails, and operations;
+- large Agent applications such as coding and browser agents; and
+- benchmarks and evaluation infrastructure.
 
-1. What is the task, environment, and success contract?
-2. Should the system use a workflow, a single tool-using loop, or multiple agents?
-3. What belongs in context, memory, retrieval, or external state?
-4. How are tools, permissions, retries, and human handoffs constrained?
-5. How do we observe, replay, evaluate, and secure the system?
-6. Which claims are supported by benchmarks, real deployments, or only demos?
+The catalogue includes both well-followed repositories and smaller but
+architecturally important projects. GitHub stars are shown only as a dated
+discovery signal, never as a quality ranking.
 
-## Start here
+## Existing lists we learn from
 
-### A compact learning path
-
-| Stage | Learn | Suggested resources |
-|---|---|---|
-| 1. Foundations | Tool use, structured outputs, context, and failure modes | [ReAct](https://arxiv.org/abs/2210.03629), [Toolformer](https://arxiv.org/abs/2302.04761), [OpenAI: A practical guide to building agents](https://cdn.openai.com/business-guides-and-resources/a-practical-guide-to-building-agents.pdf) |
-| 2. Agent patterns | Workflows, routing, parallelization, orchestrator-workers, evaluators | [Anthropic: Building effective agents](https://www.anthropic.com/research/building-effective-agents), [LangGraph](https://langchain-ai.github.io/langgraph/), [LlamaIndex Workflows](https://docs.llamaindex.ai/en/stable/module_guides/workflow/) |
-| 3. Tool and protocol design | Tool schemas, permissions, interoperability, and state boundaries | [Model Context Protocol](https://modelcontextprotocol.io/), [OpenAI Agents SDK](https://openai.github.io/openai-agents-python/), [Google ADK](https://google.github.io/adk-docs/) |
-| 4. Evaluation | Task success, trajectory quality, reliability, cost, and safety | [SWE-bench](https://www.swebench.com/), [τ-bench](https://github.com/sierra-research/tau2-bench), [AgentDojo](https://github.com/ethz-spylab/agentdojo), [BrowserGym](https://github.com/ServiceNow/BrowserGym) |
-| 5. Production design | Observability, replay, guardrails, incident response, and governance | [OpenTelemetry](https://opentelemetry.io/), [OWASP Agentic AI Threats and Mitigations](https://genai.owasp.org/resource/agentic-ai-threats-and-mitigations/), [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework) |
-
-### Design pattern cards
-
-The first catalogue is organized around system shape and operational contracts:
-
-- [P01 Prompt chain](patterns/prompt-chain.md) — fixed, inspectable stages.
-- [P02 Router](patterns/router.md) — bounded path selection and abstention.
-- [P03 Parallel fan-out/fan-in](patterns/parallel-fan-out.md) — independent work with explicit merge rules.
-- [P04 Orchestrator-workers](patterns/orchestrator-workers.md) — dynamic delegation with bounded worker contracts.
-- [P05 Tool-using loop](patterns/tool-using-loop.md) — environment-driven action/observation cycles.
-- [P06 Planner-executor](patterns/planner-executor.md) — versioned plans with live precondition checks.
-- [P07 Evaluator-optimizer](patterns/evaluator-optimizer.md) — bounded improvement against a rubric or test.
-- [P08 Retrieval-grounded agent](patterns/retrieval-grounded.md) — evidence, provenance, and trust boundaries.
-- [P09 Memory read/write](patterns/memory-read-write.md) — governed persistence across episodes.
-- [P10 Human handoff](patterns/human-handoff.md) — explicit escalation and resumption.
-- [P11 Guarded action boundary](patterns/guarded-action-boundary.md) — authorization, idempotency, and receipts.
-
-See the [full pattern index](patterns/README.md) for the comparison table.
-
-### Design methods and external references
-
-- [Agentic patterns](https://github.com/nibzard/awesome-agentic-patterns) — a useful pattern catalogue to compare against concrete implementations.
-- [Building effective agents](https://www.anthropic.com/research/building-effective-agents) — a clear distinction between simple workflows and autonomous agents.
-- [OpenAI agent guide](https://cdn.openai.com/business-guides-and-resources/a-practical-guide-to-building-agents.pdf) — practical decomposition, tools, orchestration, and guardrails.
-- [Google Agent Development Kit](https://google.github.io/adk-docs/) — an implementation-oriented view of agents, tools, sessions, and evaluation.
-- [Microsoft AutoGen](https://microsoft.github.io/autogen/) — multi-agent conversation and event-driven design.
-- [CrewAI](https://docs.crewai.com/) — role/task-oriented orchestration for teams of agents.
-- [LangGraph](https://langchain-ai.github.io/langgraph/) — explicit graph/state modeling for controllable agent workflows.
-
-### Papers worth knowing
-
-- [ReAct: Synergizing Reasoning and Acting in Language Models](https://arxiv.org/abs/2210.03629)
-- [Toolformer: Language Models Can Teach Themselves to Use Tools](https://arxiv.org/abs/2302.04761)
-- [Reflexion: Language Agents with Verbal Reinforcement Learning](https://arxiv.org/abs/2303.11366)
-- [Generative Agents](https://arxiv.org/abs/2304.03442)
-- [Voyager](https://arxiv.org/abs/2305.16291)
-- [SWE-agent](https://arxiv.org/abs/2405.15793)
-- [AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses](https://arxiv.org/abs/2406.13352)
-- [τ-bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains](https://arxiv.org/abs/2406.12045)
-
-### Learning websites and courses
-
-- [Hugging Face Agents Course](https://huggingface.co/learn/agents-course/en/unit0/introduction)
-- [DeepLearning.AI short courses](https://www.deeplearning.ai/short-courses/)
-- [Full Stack Deep Learning](https://fullstackdeeplearning.com/)
-- [Microsoft AI Agents for Beginners](https://github.com/microsoft/ai-agents-for-beginners)
-- [Anthropic courses](https://github.com/anthropics/courses)
-- [OpenAI Cookbook](https://cookbook.openai.com/)
-- [Google Cloud Agent Development Kit resources](https://cloud.google.com/products/agent-builder)
-
-### Existing lists we learn from
-
-This repository is complementary to, and should credit, the broader ecosystem:
-
-- [kyrolabs/awesome-agents](https://github.com/kyrolabs/awesome-agents) — projects and platforms.
-- [nibzard/awesome-agentic-patterns](https://github.com/nibzard/awesome-agentic-patterns) — patterns.
+- [kyrolabs/awesome-agents](https://github.com/kyrolabs/awesome-agents) — broad Agent projects and platforms.
+- [nibzard/awesome-agentic-patterns](https://github.com/nibzard/awesome-agentic-patterns) — agentic patterns.
 - [Picrew/awesome-agent-harness](https://github.com/Picrew/awesome-agent-harness) — harness engineering.
 - [luo-junyu/Awesome-Agent-Papers](https://github.com/luo-junyu/Awesome-Agent-Papers) — papers and surveys.
-- [VoltAgent/awesome-agent-skills](https://github.com/VoltAgent/awesome-agent-skills) — skills and reusable capabilities.
-- [WenyuChiou/awesome-agentic-ai-zh](https://github.com/WenyuChiou/awesome-agentic-ai-zh) — Chinese/trilingual learning roadmap.
+- [VoltAgent/awesome-agent-skills](https://github.com/VoltAgent/awesome-agent-skills) — reusable skills.
+- [WenyuChiou/awesome-agentic-ai-zh](https://github.com/WenyuChiou/awesome-agentic-ai-zh) — Chinese/trilingual roadmap.
 
-## How we review an entry
+This project complements those lists rather than claiming to be the first or
+the only catalogue.
 
-Each addition should include:
+## Contributions
 
-- **Design question:** what decision does this resource inform?
-- **Type:** paper, course, documentation, framework, benchmark, case study, or tool.
-- **Maturity:** concept, research prototype, maintained project, or production evidence.
-- **Evidence:** primary source, code, benchmark, deployment report, or explicit limitation.
-- **Last checked:** date on which the link and basic status were verified.
+See [CONTRIBUTING.md](CONTRIBUTING.md). Additions should include an official
+repository or documentation link, architectural role, design center, maturity
+caveat, and the date checked.
 
-We prefer primary sources, maintained documentation, reproducible examples, and
-clear limitations. Popularity is useful for discovery, but stars are not evidence
-of reliability.
+## Scope
 
-## Contributing
+The landscape is curated, not exhaustive. Agent ecosystems change quickly, and
+projects may move repositories, merge into larger frameworks, or become
+archived. We preserve those status changes instead of silently treating every
+repository as equally current.
 
-See [CONTRIBUTING.md](CONTRIBUTING.md). The short version: submit focused entries,
-avoid duplicate lists, explain the design lesson, and do not turn marketing claims
-into facts.
-
-## Scope note
-
-This is a curated learning and design guide, not a claim that any framework is
-universally best. Agent systems change quickly; links and maintenance status should
-be rechecked regularly. The initial catalogue was assembled on 2026-07-31.
+Last checked: 2026-07-31.
 
 ## License
 
