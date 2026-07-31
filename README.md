@@ -17,6 +17,10 @@ Start with the [Agent Framework Landscape](frameworks/README.md). It separates:
 - large Agent applications such as coding and browser agents; and
 - benchmarks and evaluation infrastructure.
 
+For the research side, see [Agent Papers by Design Question](papers/README.md),
+which maps papers to tool use, planning, memory, collaboration, applications,
+evaluation, and security.
+
 The catalogue includes both well-followed repositories and smaller but
 architecturally important projects. GitHub stars are shown only as a dated
 discovery signal, never as a quality ranking.
