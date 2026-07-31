@@ -34,7 +34,25 @@ We organize resources around the decisions an agent builder actually makes:
 | 4. Evaluation | Task success, trajectory quality, reliability, cost, and safety | [SWE-bench](https://www.swebench.com/), [τ-bench](https://github.com/sierra-research/tau2-bench), [AgentDojo](https://github.com/ethz-spylab/agentdojo), [BrowserGym](https://github.com/ServiceNow/BrowserGym) |
 | 5. Production design | Observability, replay, guardrails, incident response, and governance | [OpenTelemetry](https://opentelemetry.io/), [OWASP Agentic AI Threats and Mitigations](https://genai.owasp.org/resource/agentic-ai-threats-and-mitigations/), [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework) |
 
-### Design methods and patterns
+### Design pattern cards
+
+The first catalogue is organized around system shape and operational contracts:
+
+- [P01 Prompt chain](patterns/prompt-chain.md) — fixed, inspectable stages.
+- [P02 Router](patterns/router.md) — bounded path selection and abstention.
+- [P03 Parallel fan-out/fan-in](patterns/parallel-fan-out.md) — independent work with explicit merge rules.
+- [P04 Orchestrator-workers](patterns/orchestrator-workers.md) — dynamic delegation with bounded worker contracts.
+- [P05 Tool-using loop](patterns/tool-using-loop.md) — environment-driven action/observation cycles.
+- [P06 Planner-executor](patterns/planner-executor.md) — versioned plans with live precondition checks.
+- [P07 Evaluator-optimizer](patterns/evaluator-optimizer.md) — bounded improvement against a rubric or test.
+- [P08 Retrieval-grounded agent](patterns/retrieval-grounded.md) — evidence, provenance, and trust boundaries.
+- [P09 Memory read/write](patterns/memory-read-write.md) — governed persistence across episodes.
+- [P10 Human handoff](patterns/human-handoff.md) — explicit escalation and resumption.
+- [P11 Guarded action boundary](patterns/guarded-action-boundary.md) — authorization, idempotency, and receipts.
+
+See the [full pattern index](patterns/README.md) for the comparison table.
+
+### Design methods and external references
 
 - [Agentic patterns](https://github.com/nibzard/awesome-agentic-patterns) — a useful pattern catalogue to compare against concrete implementations.
 - [Building effective agents](https://www.anthropic.com/research/building-effective-agents) — a clear distinction between simple workflows and autonomous agents.

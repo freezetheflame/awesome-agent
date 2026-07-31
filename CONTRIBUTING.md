@@ -20,6 +20,20 @@ Use this template when the entry needs more context:
   Last checked: YYYY-MM-DD.
 ```
 
+## Adding a design pattern card
+
+Create a focused file under `patterns/` and add it to `patterns/README.md` and
+the pattern index in `README.md`. A card should include:
+
+- the design question and a small architecture diagram;
+- good-fit and avoid-when guidance;
+- state, tool, permission, and termination contracts;
+- failure modes, observability signals, and evaluation suggestions;
+- primary references and a last-checked date.
+
+Patterns should describe a system shape and its trade-offs, not advertise a
+framework or imply that more autonomy is automatically better.
+
 ## Review standards
 
 - Prefer primary papers, official documentation, source repositories, and
