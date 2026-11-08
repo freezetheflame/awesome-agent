@@ -92,6 +92,7 @@ of a substantial Agent product, not because they are drop-in SDKs.
 | [Letta](https://github.com/letta-ai/letta) | stateful agents and memory | explicit long-lived agent state | 24.0k |
 | [Mem0](https://github.com/mem0ai/mem0) | memory layer for agents | memory extraction and retrieval as a service | high-visibility |
 | [Open Interpreter](https://github.com/OpenInterpreter/open-interpreter) | natural-language computer control | local execution and interactive tool loop | high-visibility |
+| [agent-qa](https://github.com/vostride/agent-qa) | natural-language web, Android and iOS QA application | Reviewable memidex facts/procedures, validated self-improvement and run evidence ([docs](https://vostride.com/docs/agent-qa/quickstart)); early-stage; [FSL-1.1-ALv2](https://vostride.com/license.md) competing-use limits; external costs apply; checked 2026-11-08 | not sampled |
 
 ## 6. Benchmarks and evaluation infrastructure
 
